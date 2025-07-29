@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,600;1,600&family=Roboto&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Xanh+Mono:ital@0;1&display=swap');:root{
+    --bgColor: #333;
+    --textPrimary: #FFCFD7;
+    --textSecondary: #666;
+    --primaryColor: #FF85AA
+}
+
+body{
+    font-family: "Xanh Mono", monospace;
+    background-color:var(--bgColor);
+    color: var(--textPrimary);
+    font-size: 1.4rem;
+    overflow-x: hidden;
+}
+main{
+    width: 600px;
+    margin: 50px auto;
+}
+
+h1{
+    color: var(--primaryColor);
+}
+h1 svg{
+    width: 40px;
+    fill:var(--primaryColor);
+}
+
+#title {
+    cursor: pointer;
+}
+
+#header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 6px 30px;
+}
+
+.pink-bow {
+    color: #FF85AA;
+}
+
+#title {
+    color: white;
+}
+
+#game {
+    display: none; /* hidden until "Start Game" is clicked */
+}
+
+#main-header {
+    margin-top: 0px;
+    text-align: left;
+}
+
+#song1 {
+    top: 10px;
+    left: 17.5px;
+    background: none;
+}
+
+#song2 {
+    top: 10px;
+    left: 17.5px;
+    background: none;
+}
+
+#song3 {
+    top: 10px;
+    left: 17.5px;
+    background: none;
+}
+
+#song4 {
+    top: 10px;
+    left: 17.5px;
+    background: none;
+}
+
+.songbtn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* optional for layering */
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.songbtn img{
+    transition: opacity 0.3 ease;
+}
+
+.songbtn:hover img {
+    opacity:0.3;
+}
+
+.songbtn .overlay-text1,
+.songbtn .overlay-text2,
+.songbtn .overlay-text3,
+.songbtn .overlay-text4
+ {
+    position: relative;
+    left: -300px;
+    color: white;
+    font-family: "Xanh Mono", monospace;
+    font-size: 1.2rem;
+    pointer-events: none;
+    opacity: 0;
+
+}
+
+.songbtn:hover .overlay-text1,
+.songbtn:hover .overlay-text2,
+.songbtn:hover .overlay-text3,
+.songbtn:hover .overlay-text4
+{
+  opacity: 1;
+}
+
+#start-screen {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#start-images {
+  display: flex;
+  align-items: flex-start; /* aligns stars to top of cover */
+  margin-left: 6px; /* centers the whole block on the screen */
+  gap: 20px;               /* space between cover and stars */
+}
+
+#bewitchedCover {
+    margin-left: -95px;
+    margin-top: -70px;
+    height: auto;
+}
+
+#song1stars {
+    position: relative;
+    top: -138px;
+    left: 40px;
+} 
+
+#start-button {
+    display: flex;
+    margin-top: -120px;
+    padding-left: 300px;
+    background: none;
+}
+
+#start-button img {
+    transition: 0.3 ease;
+}
+
+#start-button:hover img {
+    content: url("assets/start_pink.pdf");
+}
+
+#s1-play {
+    display: block;
+    background: none;
+    margin-top: -300px;
+    margin-left: -25px;
+}
+ 
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between button and progress bar */
+  margin-top: 90px; /* Match your existing button positioning */
+  margin-left: 0px;
+}
+
+#s1-time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: white;
+    margin: 0 -2px;
+    margin-top: -75px;
+    margin-bottom: 270px;
+    gap: 420px;
+}
+
+#s1-progress-bar {
+    width: 478px; 
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 2px;
+    position: relative;
+    margin-top: -300px;
+    margin-left: -482px;
+}
+
+
+#s1-progress-fill {
+    height: 100%;
+    width: 0%;                 /* Will increase as progress */
+    background-color: #FF85AA;
+    border-radius: 2px;
+    transition: width 0.2s ease;  /* smooth fill */
+}
+
+#s1-progress-knob {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    pointer-events: none; /* So it doesn’t block clicks */
+    z-index: 1;   
+}
+
+#info{
+    font-family: "Roboto Mono", monospace;
+    color: #ddd;
+    font-size: 1.2rem;
+    position: relative;
+    margin-top: 34px;
+    margin-left: -196px;
+}
+
+#newGameBtn {
+    pointer-events:none;
+    background: none;
+    position: relative;
+    margin-right: -840px;
+    margin-top: -65px;
+}
+
+#newGameBtn img {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+
+
+#progress-bar {
+    width: 100%;
+    height: 6px;               /* Must have height */
+    background-color: #ddd;    /* Visible background */
+    border-radius: 3px;
+    margin-top: 40px;          /* spacing from above */
+}
+
+#progress-fill {
+    height: 100%;
+    width: 0%;                 /* Will increase as progress */
+    background-color: #FF85AA;
+    border-radius: 3px;
+    transition: width 0.2s ease;  /* smooth fill */
+}
+
+button{
+    font-family: "Xanh Mono", monospace;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255,.2);
+    border:0;
+    color: rgba(255, 255, 255);
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+div#game{
+    line-height:35px;
+    height:105px;
+    position: relative;
+}
+
+#words-container {
+    max-height: 4.5em;  /* Assuming ~1.5em per line × 3 lines */
+    overflow: hidden;
+    position: relative;
+}
+
+
+div#game:focus{
+    outline:0;
+}
+
+#words{
+    color: var(--textSecondary);
+}
+
+
+div.word{
+    display: inline-block;
+    font-family: "Roboto Mono", monospace;
+    margin: 0 5px;
+}
+
+.letter.correct{
+    color: #fff;
+}
+
+.letter.incorrect{
+    color: #f55;
+}
+
+.letter.timeCorrect{
+    /* color: #adf3a7; */
+    color: #A7D986;
+}
+
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#cursor{
+    display:none;
+    width: 2px;
+    height: 1.6rem;
+    background: var(--primaryColor);
+    position: fixed;
+    top: 200px;
+    left: 178px;
+    animation: blink .6s infinite;
+}
+
+
+#game.over #words{
+    opacity: .5;
+    filter: blur(0px);
+}
+
+
+.word.highlighted {
+    color: #fcbddf;
+}
+
+/* dashboard */
+.graph {
+  grid-area: graph;
+  background-color: none;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 120px;
+  max-width: 400px;
+}
+.left-stat1 {
+    grid-area: left1;
+}
+
+.left-stat2 {
+    grid-area: left2;
+}
+
+.bottom-stat1 {
+    grid-area: bottom1;
+}
+
+.bottom-stat2 {
+    grid-area: bottom2;
+}
+
+.bottom-stat3 {
+    grid-area: bottom3;
+}
+
+.corner-stat {
+    grid-area: corner;
+}
+
+#dashboard {
+    display: grid;
+    grid-template-areas:
+        'left1 graph graph graph'
+        'left2 graph graph graph'
+        'corner bottom1 bottom2 bottom3';
+    grid-template-columns: 160px 2fr 2fr 1fr; /* or whatever widths make sense */
+    grid-template-rows: auto auto auto;
+    grid-gap: 10px;
+    gap: 10px;
+    padding: 10px;
+}
+
+.left-stat1 { grid-area: left1; }
+.left-stat2 { grid-area: left2; }
+.corner-stat { grid-area: corner; }
+.bottom-stat1 { grid-area: bottom1; }
+.bottom-stat2 { grid-area: bottom2; }
+.bottom-stat3 { grid-area: bottom3; }
+
+.stat-title {
+  font-family: Roboto Mono;
+  font-size: 1rem;
+  color: #d9d9d9e2;
+}
+
+.stat-value {
+    font-family: Roboto Mono;
+    font-size: 2.2rem;
+    color: #FF85AA;
+}
+
+.chars {
+    font-size: 0.9rem;
+}
+
+#stats-dash,
+#home-dash,
+#restart-dash {
+    background: none;
+}
+
+
+#stats-dash {
+    position: relative;
+    top: -400px;
+    left: 305px;
+} 
+
+#home-dash {
+    position: relative;
+    top: -400px;
+    left: 277px;
+} 
+
+#restart-dash {
+    position: relative;
+    top: -444px;
+    left: 405px;
+} 
+
+#songsym {
+    position: relative;
+    top: 30px;
+    left: -173px;
+} 
+
+#songname{
+    font-family: "Roboto Mono", monospace;
+    color: #d9d9d9e2;
+    font-size: 1.25rem;
+    position: relative;
+    margin-top: 28px;
+    margin-left: -294px;
+}

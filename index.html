@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaufeyType</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <main>
+
+        <header id="main-header">
+            <h1 id="title">
+                <span class="pink-bow">౨ৎ</span> LaufeyType
+            </h1>
+        </header>
+
+        <!-- menu screen -->
+         <div id="menu-screen" class="screen">
+            <div id="menuheader">
+                <img id="menuheaderpic" src="assets/menuheader.pdf" alt="">
+            </div>
+            <button id="song1" class="songbtn">
+                <img id="song1btnpic" src="assets/song1btn.pdf" alt="">
+                <div class="overlay-text1">Start Game</div>
+            </button>
+            <button id="song2" class="songbtn">
+                <img id="song2btnpic" src="assets/song2btn.pdf" alt="">
+                <div class="overlay-text2">Start Game</div>
+            </button>
+            <button id="song3" class="songbtn">
+                <img id="song3btnpic" src="assets/song3btn.pdf" alt="">
+                <div class="overlay-text3">Start Game</div>
+            </button>
+            <button id="song4" class="songbtn">
+                <img id="song4btnpic" src="assets/song4btn.pdf" alt="">
+                <div class="overlay-text4">Start Game</div>
+            </button>
+        </div>
+
+
+        <!-- start screen -->
+        <div id="start-screen" class="screen">
+            
+            <div id="song1-images">
+                <img id="bewitchedCover" src="assets/start_albumcover.png" alt="album cover"> 
+                <img id="song1stars" src="assets/asong1_stars.pdf" alt="">
+                <button id="start-button">
+                        <img id="song1start" src="assets/start_white.pdf" alt=""> 
+                </button>
+
+                <div class="audio-controls">
+                    
+                    <button id="s1-play">
+                        <img id="s1playbtn" src="assets/start_playBtn.png" alt="">
+                    </button>
+
+                    <div id="s1-time">
+                        <div id="s1-time-elapsed">0:00</div>                        
+                        <div id="s1-time-remaining">-1:16</div>
+                    </div>
+
+                    <div id="s1-progress-bar">
+                        <div id="s1-progress-fill"></div>
+                        <div id="s1-progress-knob"></div>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <!-- game screen -->
+        <div id="game" class="screen" tabindex="0">
+        
+            <div id="header">
+                <img id="smallCover" src="assets/small_cover1.png" alt="">
+                <div id="info"></div>
+                
+                <button id="newGameBtn">
+                    <img id="restart_btn" src="assets/restart.png" alt="">
+                </button>
+                
+            </div>
+
+            <div id="words-container">
+                <div id="words"></div>
+                <div id="cursor"></div>
+            </div>
+            
+            <div id="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+            
+        </div>
+
+        <!-- dashboard game over screen -->
+        <div id="dashboard" class="screen">
+
+            <div id="header-buttons">
+                <button id="stats-dash">
+                    <img id="statsdash_btn" src="assets/statsicon.pdf" class="header-icon">
+                </button>
+                <button id="home-dash">
+                    <img id="homedash_btn" src="assets/homeicon.pdf" class="header-icon">
+                </button>
+                <button id="restart-dash">
+                    <img id="restartdash_btn" src="assets/restarticon.pdf" class="header-icon">
+                </button>
+            </div>
+
+            <div class="graph">
+                <canvas id="syncScoreChart" width="400" height="200"></canvas>
+            </div>
+
+            <div class="left-stat1">
+                <div class="stat-title">sync score</div>
+                <div class="stat-value" id="sync-score"></div>
+            </div>
+
+             <div class="left-stat2">
+                <div class="stat-title">perfect hits</div>
+                <div class="stat-value" id="perfect-hits">
+                    <span class="chars" id="total-chars"></span>
+                </div>
+            </div>
+
+             <div class="bottom-stat1">
+                <div class="stat-title">mistypes</div>
+                <div class="stat-value" id="mistypes"></div>
+            </div>
+
+             <div class="bottom-stat2">
+                <div class="stat-title">wpm</div>
+                <div class="stat-value" id="wpm"></div>
+            </div>
+
+             <div class="bottom-stat3">
+                <div class="stat-title">time</div>
+                <div class="stat-value" id="time"></div>
+            </div>
+
+             <div class="corner-stat">
+                <div class="stat-title">off-timed hits</div>
+                <div class="stat-value" id="off-timed"></div>
+            </div>
+            
+            <img id="songsym" src="assets/songsymbol.pdf">
+            <div id="songname"></div>
+        </div>
+
+    </main>
+    <script src="typing.js"></script>
+    
+</body>
+</html>
